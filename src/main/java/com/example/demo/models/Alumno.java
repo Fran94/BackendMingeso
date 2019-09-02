@@ -3,23 +3,66 @@ package com.example.demo.models;
 import javax.persistence.*;
 import java.util.Date;
 
+import lombok.Data;
+import lombok.NonNull;
+
 @Entity
-@Table(name = "alumnos")
+@Table(name = "alumno")
 public class Alumno {
 
     @Id
-    @Column(name = "id", unique = true, nullable = false)
+    @GeneratedValue
     private Long id;
 
-    @Column(name = "name", nullable = false, length = 127)
+    @NonNull
     private String name;
 
-    @Column(name = "rut", nullable = false, length = 20)
+    @NonNull
     private String rut;
 
-    @Column(name = "carrera", nullable = false, length = 255)
+    @NonNull
     private String carrera;
 
-    @Column(name = "nacimiento", nullable = false, length = 255)
-    private Date nacimiento;
+    @NonNull
+    private String nacimiento;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getRut() {
+        return rut;
+    }
+
+    public void setRut(String rut) {
+        this.rut = rut;
+    }
+
+    public String getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
+    }
+
+    public String getNacimiento() {
+        return nacimiento;
+    }
+
+    public void setNacimiento(String nacimiento) {
+        this.nacimiento = nacimiento;
+    }
 }
