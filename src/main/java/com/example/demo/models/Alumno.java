@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NonNull;
 
 @Entity
-@Table(name = "alumno")
+@Table(name = "alumnos")
 public class Alumno {
 
     @Id
@@ -25,6 +25,9 @@ public class Alumno {
 
     @NonNull
     private String nacimiento;
+
+    @NonNull
+    private String photo;
 
     public Long getId() {
         return id;
@@ -64,5 +67,13 @@ public class Alumno {
 
     public void setNacimiento(String nacimiento) {
         this.nacimiento = nacimiento;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }
