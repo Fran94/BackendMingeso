@@ -24,12 +24,12 @@ public class AlumnoController {
     public List<Alumno> getAll(){return repository.findAll(sortByName());}
 
     @PostMapping("/alumno")
-    Alumno insertAlumno(@RequestBody Alumno newAlumno){
+    public Alumno insertAlumno(@RequestBody Alumno newAlumno){
         return repository.save(newAlumno);
     }
 
     @GetMapping("/alumno/{id}")
-    Alumno getAlumnoId(@PathVariable Long id){
+    public Alumno getAlumnoId(@PathVariable Long id){
         return repository.findAlumnoById(id);
     }
     
