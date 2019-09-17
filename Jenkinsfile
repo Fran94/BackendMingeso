@@ -14,6 +14,7 @@ node {
 	}
 	
 	stage('deploy'){
+		sh 'whoami'
 		sh 'echo "deploying"' 
 		sh 'cp /var/lib/jenkins/workspace/Backend-Pipeline_master/target/demo-0.0.1-SNAPSHOT.war /opt/tomcat/latest/webapps/mingeso_app.war'
 	}
