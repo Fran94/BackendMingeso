@@ -32,5 +32,4 @@ public class AlumnoController {
     Alumno getAlumnoId(@PathVariable Long id){
         return repository.findAlumnoById(id);
     }
-    
 }
