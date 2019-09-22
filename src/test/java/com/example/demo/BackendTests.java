@@ -25,7 +25,7 @@ public class BackendTests {
         alumno.setId(1L);
         alumno.setName("Jhon");
         alumno.setRut("12.345.678-9");
-        alumno.setCarrera("Ingenieria Informatica");
+        alumno.setCarrera("Ingeniería Civil en Ambiente");
         alumno.setNacimiento("10-10-10");
         alumno.setPhoto("none");
 
