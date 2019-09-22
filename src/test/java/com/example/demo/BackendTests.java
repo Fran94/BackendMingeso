@@ -31,8 +31,7 @@ public class BackendTests {
 
         alumnoRepository.save(alumno);
 
-        assertEquals("Jhon", alumnoRepository.findAlumnoById(1L).getName());
-        //assertEquals("Jhon", "Jhon");
+        assertEquals("Johnny Rockets", alumnoRepository.findAlumnoById(1L).getName());
     }
 
 }

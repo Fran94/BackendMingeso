@@ -5,12 +5,15 @@ import org.junit.After;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsNot.not;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.*;
 
 public class InsertarAlumnoTest {
@@ -18,20 +21,32 @@ public class InsertarAlumnoTest {
   private Map<String, Object> vars;
   JavascriptExecutor js;
   @Before
-  public void setUp() {
-      System.setProperty("webdriver.chrome.driver", "src/test/java/chromedriver.exe");
-      driver = new ChromeDriver();
-      js = (JavascriptExecutor) driver;
-      vars = new HashMap<String, Object>();
+  public void setUp() throws MalformedURLException {
+
+    DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+    capabilities.setPlatform(Platform.LINUX);
+    capabilities.setVersion("");
+    driver = new RemoteWebDriver(new URL("http://157.245.12.218:4444/wd/hub"), capabilities);
+
+    js = (JavascriptExecutor) driver;
+    vars = new HashMap<String, Object>();
   }
   @After
   public void tearDown() {
     driver.quit();
   }
+
   @Test
   public void insertarAlumno() throws InterruptedException {
-    driver.get("http://localhost:8080/");
+    driver.get("http://157.245.12.218:80/");
+
+
+    //driver.navigate().to("http://localhost:8080/");
+    Thread.sleep(1000);
+    System.out.println("Title " + driver.getTitle());
+
     driver.manage().window().setSize(new Dimension(1036, 828));
+
     WebElement name = driver.findElement(By.id("input-23"));
     name.sendKeys("SeleniumTest");
     WebElement rut = driver.findElement(By.id("input-27"));
