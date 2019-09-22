@@ -23,7 +23,7 @@ public class BackendTests {
 
         Alumno alumno = new Alumno();
         alumno.setId(1L);
-        alumno.setName("Jhon");
+        alumno.setName("Johnny Rockets");
         alumno.setRut("12.345.678-9");
         alumno.setCarrera("Ingeniería Civil en Ambiente");
         alumno.setNacimiento("10-10-10");
