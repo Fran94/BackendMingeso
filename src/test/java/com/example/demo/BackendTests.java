@@ -33,6 +33,8 @@ public class BackendTests {
         controller.insertAlumno(alumno);
 
         assertEquals("Johnny Rockets", controller.getAlumnoId((long) 11).getName());
+
+        controller.deleteAlumnoId(alumno.getId());
     }
 
 }
