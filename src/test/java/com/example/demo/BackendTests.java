@@ -1,7 +1,9 @@
 package com.example.demo;
 
 import com.example.demo.controllers.AlumnoController;
+import com.example.demo.controllers.CarreraController;
 import com.example.demo.models.Alumno;
+import com.example.demo.models.Carrera;
 import com.example.demo.repositories.AlumnoRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,6 +24,9 @@ public class BackendTests {
     @Autowired
     AlumnoController controller;
 
+    @Autowired
+    CarreraController carreraController;
+
     @Test
     public void findAlumnoById() {
 
@@ -37,17 +42,10 @@ public class BackendTests {
     }
 
     @Test
-    public void findAlumnoByRut() {
-
-        Alumno alumno = new Alumno();
-        alumno.setName("Johnny Rockets");
-        alumno.setRut("12.345.678-9");
-        alumno.setCarrera("Ingeniería Civil en Ambiente");
-        alumno.setNacimiento("10-10-10");
-        alumno.setPhoto("none");
-        controller.insertAlumno(alumno);
-        assertEquals("Johnny Rockets", controller.getAlumnoRut(alumno.getRut()).get(0).getName());
-        controller.deleteAlumnoId(alumno.getId());
+    public void findCarreraAll() {
+        List<Carrera> carreraList;
+        carreraList = carreraController.getAll();
+        assertFalse(carreraList.isEmpty());
     }
 
     @Test
