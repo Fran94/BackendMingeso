@@ -23,7 +23,7 @@ public class BackendTests {
     public void findAlumnoById() {
 
         Alumno alumno = new Alumno();
-        alumno.setId(1L);
+        alumno.setId((long) 11);
         alumno.setName("Johnny Rockets");
         alumno.setRut("12.345.678-9");
         alumno.setCarrera("Ingeniería Civil en Ambiente");
@@ -32,7 +32,7 @@ public class BackendTests {
 
         controller.insertAlumno(alumno);
 
-        assertEquals("Johnny Rockets", controller.getAlumnoId(1L).getName());
+        assertEquals("Johnny Rockets", controller.getAlumnoId((long) 11).getName());
     }
 
 }
