@@ -31,7 +31,9 @@ public class BackendTests {
 
         controller.insertAlumno(alumno);
 
-        assertEquals("Johnny Rockets", controller.getAlumnoRut(alumno.getRut()).getName());
+        System.out.println(alumno.getId().toString());
+
+        assertEquals("Johnny Rockets", controller.getAlumnoId(alumno.getId()).getName());
 
         controller.deleteAlumnoId(alumno.getId());
     }
