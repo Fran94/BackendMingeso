@@ -28,13 +28,22 @@ public class BackendTests {
         alumno.setCarrera("Ingeniería Civil en Ambiente");
         alumno.setNacimiento("10-10-10");
         alumno.setPhoto("none");
-
         controller.insertAlumno(alumno);
-
-        System.out.println(alumno.getId().toString());
-
         assertEquals("Johnny Rockets", controller.getAlumnoId(alumno.getId()).getName());
+        controller.deleteAlumnoId(alumno.getId());
+    }
 
+    @Test
+    public void findAlumnoByRut() {
+
+        Alumno alumno = new Alumno();
+        alumno.setName("Johnny Rockets");
+        alumno.setRut("12.345.678-9");
+        alumno.setCarrera("Ingeniería Civil en Ambiente");
+        alumno.setNacimiento("10-10-10");
+        alumno.setPhoto("none");
+        controller.insertAlumno(alumno);
+        assertEquals("Johnny Rockets", controller.getAlumnoRut(alumno.getRut()).getName());
         controller.deleteAlumnoId(alumno.getId());
     }
 
