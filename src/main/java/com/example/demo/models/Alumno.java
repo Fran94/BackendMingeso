@@ -1,9 +1,6 @@
 package com.example.demo.models;
 
 import javax.persistence.*;
-import java.util.Date;
-
-import lombok.Data;
 import lombok.NonNull;
 
 @Entity
