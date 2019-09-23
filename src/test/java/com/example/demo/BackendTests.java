@@ -46,7 +46,7 @@ public class BackendTests {
         alumno.setNacimiento("10-10-10");
         alumno.setPhoto("none");
         controller.insertAlumno(alumno);
-        assertEquals("Johnny Rockets", controller.getAlumnoRut(alumno.getRut()).getName());
+        assertEquals("Johnny Rockets", controller.getAlumnoRut(alumno.getRut()).get(0).getName());
         controller.deleteAlumnoId(alumno.getId());
     }
 
