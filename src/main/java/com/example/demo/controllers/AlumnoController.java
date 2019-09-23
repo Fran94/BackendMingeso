@@ -33,6 +33,9 @@ public class AlumnoController {
         return repository.findAlumnoById(id);
     }
 
+    @GetMapping("/alumnoRut/{rut}")
+    public Alumno getAlumnoRut(@PathVariable String rut){ return  repository.findAlumnoByRut(rut);}
+
     @DeleteMapping("/alumno/{id}")
     public void deleteAlumnoId(@PathVariable Long id) {repository.delete(repository.findAlumnoById(id));}
     
