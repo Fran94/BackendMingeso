@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.controllers.AlumnoController;
 import com.example.demo.models.Alumno;
 import com.example.demo.repositories.AlumnoRepository;
 import org.junit.Test;
@@ -16,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 public class BackendTests {
 
     @Autowired
-    AlumnoRepository alumnoRepository;
+    AlumnoController controller;
 
     @Test
     public void findAlumnoById() {
@@ -29,9 +30,9 @@ public class BackendTests {
         alumno.setNacimiento("10-10-10");
         alumno.setPhoto("none");
 
-        alumnoRepository.save(alumno);
+        controller.insertAlumno(alumno);
 
-        assertEquals("Johnny Rockets", alumnoRepository.findAlumnoById(1L).getName());
+        assertEquals("Johnny Rockets", controller.getAlumnoId(1L).getName());
     }
 
 }
