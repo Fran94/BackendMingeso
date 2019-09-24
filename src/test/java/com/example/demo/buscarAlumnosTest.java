@@ -18,7 +18,7 @@ public class buscarAlumnosTest extends SeleniumConfig{
         listar.click();
 
 
-        Thread.sleep(2000);
+        Thread.sleep(4000);
 
         WebElement buscador = this.driver.findElement(By.id("input-60"));
         buscador.sendKeys("SeleniumTest");
