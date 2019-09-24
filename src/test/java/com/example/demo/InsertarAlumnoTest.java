@@ -26,14 +26,14 @@ public class InsertarAlumnoTest extends SeleniumConfig{
 
     WebElement day = this.driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div/div[2]/div/div[2]/table/tbody/tr[3]/td[3]/button"));
     day.click();
-    Thread.sleep(500);
+    Thread.sleep(1000);
     this.driver.findElement(By.id("button_ok")).click();
 
-
+    Thread.sleep(1000);
     WebElement dropDown = this.driver.findElement(By.cssSelector(".v-select__selections"));
     dropDown.click();
 
-    Thread.sleep(500);
+    Thread.sleep(1000);
     this.driver.findElement(By.xpath("//*[@id=\"ingeniería-civil-en-electricidad-list-item-67\"]")).click();
 
     this.driver.findElement(By.cssSelector(".v-input--selection-controls__ripple")).click();
